@@ -7,15 +7,16 @@
 setSize();
 addEventListener('resize',setSize);
 function setSize() {
-    if(document.documentElement.clientWidth<=320){
-        document.documentElement.style.fontSize = 50+'px';
-    }else if(document.documentElement.clientWidth>320&&document.documentElement.clientWidth<=375){
-        document.documentElement.style.fontSize = 50*1.1+'px';
-    }else if(document.documentElement.clientWidth>375&&document.documentElement.clientWidth<=500){
-        document.documentElement.style.fontSize = 50*1.3+'px';
-    }else {
-        document.documentElement.style.fontSize = 50*2+'px';
-    }
+    // if(document.documentElement.clientWidth<=320){
+    //     document.documentElement.style.fontSize = 50+'px';
+    // }else if(document.documentElement.clientWidth>320&&document.documentElement.clientWidth<=375){
+    //     document.documentElement.style.fontSize = 50*1.1+'px';
+    // }else if(document.documentElement.clientWidth>375&&document.documentElement.clientWidth<=500){
+    //     document.documentElement.style.fontSize = 50*1.3+'px';
+    // }else {
+    //     document.documentElement.style.fontSize = 50*2+'px';
+    // }
+    document.documentElement.style.fontSize = document.documentElement.clientWidth/640*100+'px';
 }
 
 // console.log(document.documentElement.style.fontSize);
@@ -24,7 +25,7 @@ function setSize() {
 // LOADING
 // 用自调用函数表达式做闭包,返回一个对象,实现方法私有化,代码模块化,防止变量污染
 var loadingRender = (function () {
-    var ary = [  '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', 'hr.png', 'me.png', 'suprs.jpg', 'wade.jpg', 'westW.jpg', 'zf_cubeBg.jpg', 'zf_cubeTip.png', 'zf_messageArrow1.png', 'zf_messageArrow2.png', 'zf_messageChat.png', 'zf_messageKeyboard.png', 'zf_return.png']
+    var ary = [ 'hr.png', 'me.png', 'suprs.jpg', 'wade.jpg', 'westW.jpg', 'zf_cubeBg.jpg', 'zf_cubeTip.png', 'zf_messageArrow1.png', 'zf_messageArrow2.png', 'zf_messageChat.png', 'zf_messageKeyboard.png', 'zf_return.png']
     var $loading = $('#loading'),
         $progressEm = $loading.find('em');
     var step = 0,
