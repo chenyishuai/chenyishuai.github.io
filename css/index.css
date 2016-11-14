@@ -28,6 +28,7 @@ body,html{width: 100%;height: 100%;overflow: hidden;}
 .message .messageList{
     margin-top: .2rem;
     position: relative;
+    transition:all 0.3s;
 }
 .message .messageList li{
     margin-bottom: .4rem;
@@ -209,7 +210,7 @@ body,html{width: 100%;height: 100%;overflow: hidden;}
 }
 .page1 #makisu{
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     margin:-3rem 0 0 -2.7rem;
     width: 5.4rem;
@@ -281,7 +282,7 @@ body,html{width: 100%;height: 100%;overflow: hidden;}
 }
 .swiper .info{
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     margin:-3rem 0 0 -2.8rem;
     width: 5.4rem;
