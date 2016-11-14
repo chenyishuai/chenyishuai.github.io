@@ -50,7 +50,7 @@ var loadingRender = (function () {
                                 $loading.css('display','none');
                             });
                             messageRender.init();
-                        },4500)
+                        },1000)
                     }
                 }
             });
