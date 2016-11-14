@@ -1,26 +1,7 @@
 /**
  * Created by Administrator on 2016/11/6.
  */
-// 适配不同屏幕大小的手机
-// document.documentElement.style.width = document.documentElement.clientWidth>540?540:document.documentElement.clientWidth;
 
-setSize();
-addEventListener('resize',setSize);
-function setSize() {
-    // if(document.documentElement.clientWidth<=320){
-    //     document.documentElement.style.fontSize = 50+'px';
-    // }else if(document.documentElement.clientWidth>320&&document.documentElement.clientWidth<=375){
-    //     document.documentElement.style.fontSize = 50*1.1+'px';
-    // }else if(document.documentElement.clientWidth>375&&document.documentElement.clientWidth<=500){
-    //     document.documentElement.style.fontSize = 50*1.3+'px';
-    // }else {
-    //     document.documentElement.style.fontSize = 50*2+'px';
-    // }
-    document.documentElement.style.fontSize = document.documentElement.clientWidth/640*100+'px';
-}
-
-// console.log(document.documentElement.style.fontSize);
-// console.log(document.documentElement.clientWidth);
 
 // LOADING
 // 用自调用函数表达式做闭包,返回一个对象,实现方法私有化,代码模块化,防止变量污染
