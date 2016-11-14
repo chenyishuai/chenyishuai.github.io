@@ -97,7 +97,7 @@ var messageRender = (function () {
                 bounceTop -= $list.eq(step).height()-10;
                 // console.log($list.eq(step).height());
                 $messageList.css('transform','translateY('+bounceTop+'px)');
-                if (step==total){
+                if (step==total-1){
                     window.clearInterval(autoTimer);
                     window.setTimeout(function () {
                         $message.css('transform','translateX('+-document.documentElement.clientWidth+'px)').on('TransitionEnd',function () {
@@ -255,7 +255,7 @@ var swiperRander = (function () {
                 $clos = $dialog.children('.clos'),
                 $li = $('#page6 li');
 
-            $li.singleTap(function () {
+            $li.tap(function () {
                 $mask.css({
                     'display':'block',
                     'opacity':'0.7'
