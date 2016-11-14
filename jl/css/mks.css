@@ -1,0 +1,75 @@
+
+
+
+.demo:after {
+    box-shadow: 0 1px 16px rgba(0,0,0,0.15);
+    background: #1b1b1b;
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 100%;
+    top: 0;
+}
+
+/* List styles */
+
+.list {
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+    text-transform: uppercase;
+    position: absolute;
+    margin-left: -140px;
+    margin-top: -280px;
+    top: 55%;
+}
+
+.list a {
+    
+    display: block;
+    color: #fff;
+}
+
+.list a:hover {
+    text-indent: 20px;
+}
+
+.list dt, .list dd {
+
+    text-indent: 10px;
+    line-height: 55px;
+    background: #E0FBAC;
+    margin: 0;
+    height: 55px;
+    width: 270px;
+    color: #fff;
+}
+
+.list dt {
+
+    /* Since we're hiding elements behind here, we need it in 3d */
+    -webkit-transform: translateZ(0.3px);
+    transform: translateZ(0.3px);
+
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: .35rem;
+}
+
+.list dd {
+    border-top: 1px dashed rgba(255,255,255,0.3);
+    line-height: 35px;
+    font-size: .35rem;
+    height: 35px;
+    margin: 0;
+}
+
+/* UI */
+/* Individual styles */
+.maki dt, .maki dd, .maki a { background: #FFC219; }
+.maki a:hover { background: #ffbb00; }
+.maki {
+    -webkit-transform: perspective(600px) translateZ(1px) !important;
+    transform: perspective(600px) translateZ(1px) !important;
+    left: 50%;
+}

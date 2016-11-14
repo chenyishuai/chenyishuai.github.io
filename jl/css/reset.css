@@ -1,0 +1,155 @@
+@charset "utf-8";
+/*自定义响应式h5css样式重置,参考normalize.css*/
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,
+button,input,textarea,th,td{padding: 0;margin: 0}
+
+/*设置默认字体:手机端的字体最好使用无衬字体*/
+body{
+    font-size: 12px;font-style:normal ;font-family:sans-serif;
+}
+
+/*字体太小不适合阅读,让small的字体恢复12px*/
+small{font-size: 12px;}
+h1{font-size: 18px;}
+h2{font-size: 16px}
+h3{font-size: 14px;}
+h4,h5,h6{font-size: 100%;}
+
+/*重置列表元素*/
+ul,ol{list-style: none;}
+
+/*重置连接元素*/
+a{text-decoration: none;background-color:transparent }
+
+a:hover,a:active{
+    outline-width: 0;
+    text-decoration: none;
+}
+
+/*重置hr*/
+hr{
+    border:none;
+    height: 1px;
+}
+
+/*图形图片*/
+img{border-style: none;}
+img:not([src]){display: none;}
+svg:not(:root){overflow: hidden;}
+
+/*针对响应式布局准备的,不支持ie6~8*/
+html{
+    /*禁用系统默认的菜单*/
+    -webkit-touch-callout: none;
+    /*关闭iphone和android的浏览器纵向和横向模式中自动调整字体大小的功能*/
+    -webkit-text-size-adjust: 100%;
+}
+
+input,textarea,button,a{
+    /*表单或者连接元素在手机中点击会出现边框或者彩色背景区域,这句话是去除点击的背景框*/
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+article,aside,details,figcaption,figure,footer,
+header,main,menu,nav,section,summary{display: block;}
+
+audio,canvas,progress,video{display: inline-block;}
+
+audio:not([controls]),video:not([controls]){
+    display: none;
+    height: 0;
+}
+
+progress{
+    vertical-align: baseline;
+}
+
+mark{
+    background-color: #ff0;
+    color: #000;
+}
+
+/*上标下标*/
+sub,sup{
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub{buttom:-0.25em;}
+
+/*重置表单元素*/
+button,input,select,textarea{
+    font-size: 100%;
+    outline: none;
+}
+
+button,input{
+    overflow: visible;
+}
+
+button,select{
+    text-transform: none;
+}
+
+textarea{
+    overflow: auto;
+}
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+}
+
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+}
+
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
