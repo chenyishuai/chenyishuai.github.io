@@ -224,9 +224,12 @@ var swiperRander = (function () {
                 scrollbars: true,
                 fadeScrollbars:true
             });
-            $("#wrapper1").one("touchstart",function(){
-                myscroll.refresh();
-            });
+            // $("#wrapper1").one("touchstart",function(){
+            //     myscroll.refresh();
+            // });
+            document.addEventListener('touchmove',function (ev) {
+                ev.preventDefault()
+            },false)
 
             //相册点击图片放大
             var $page6 = $('#page6'),
