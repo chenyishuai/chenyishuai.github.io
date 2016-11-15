@@ -223,10 +223,8 @@ var swiperRander = (function () {
             myscroll=new IScroll("#wrapper1",{
                 scrollbars: true,
                 fadeScrollbars:true,
-                momentum:false,
-                bounce:false,
-                momentum:false,
-                tap: 'myCustomTapEvent'
+                // momentum:false,
+                // bounce:false,
             });
             // $("#wrapper1").one("touchstart",function(){
             //     myscroll.refresh();
