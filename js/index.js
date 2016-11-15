@@ -225,7 +225,8 @@ var swiperRander = (function () {
                 fadeScrollbars:true,
                 momentum:false,
                 bounce:false,
-                momentum:false
+                momentum:false,
+                tap: 'tap'
             });
             // $("#wrapper1").one("touchstart",function(){
             //     myscroll.refresh();
