@@ -226,7 +226,7 @@ var swiperRander = (function () {
                 momentum:false,
                 bounce:false,
                 momentum:false,
-                tap: 'tap'
+                tap: 'myCustomTapEvent'
             });
             // $("#wrapper1").one("touchstart",function(){
             //     myscroll.refresh();
@@ -235,39 +235,26 @@ var swiperRander = (function () {
                 ev.preventDefault()
             },false)
 
-            //相册点击图片放大
+            //相册双击图片放大
             var $page6 = $('#page6'),
                 $mask = $page6.children('.mask'),
                 $dialog = $page6.children('.dialog'),
                 $digImg = $dialog.children('img')
                 $clos = $dialog.children('.clos'),
-                $list = $('#list')[0];
-            var pli = $list.children;
-            // console.log(pli);
-            // 绑定自定义tap事件解决滑动误触问题
-            for(i=0;i<pli.length;i++){
-                cys(pli[i]).tap(function () {
-                    $mask.css({
-                        'display':'block',
-                        'opacity':'0.7'
-                    });
-                    $dialog.css({
-                        'transform':'translateY(-40%)',
-                    });
-                    $digImg.attr('src','imgs/'+($(this).index()+1)+'.jpg')
-                })
-            }
-            // $li.Tap(function () {
-            //     $mask.css({
-            //         'display':'block',
-            //         'opacity':'0.7'
-            //     });
-            //
-            //     $dialog.css({
-            //         'transform':'translateY(-40%)',
-            //     });
-            //     $digImg.attr('src','imgs/'+($(this).index()+1)+'.jpg')
-            // });
+                $li = $('#page6 li');
+
+            $li.doubleTap(function () {
+                $mask.css({
+                    'display':'block',
+                    'opacity':'0.7'
+                });
+
+                $dialog.css({
+                    'transform':'translateY(-40%)',
+                });
+                $digImg.attr('src','imgs/'+($(this).index()+1)+'.jpg')
+            });
+
             $clos.singleTap(function () {
                 $page6.css('WebkitFilter','oPage.style.filter="blur(0)"');
                 $dialog.css({
