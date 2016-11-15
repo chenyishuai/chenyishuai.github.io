@@ -1,0 +1,94 @@
+document.addEventListener("touchmove",function(ev){
+	ev.preventDefault();
+},false);
+function Touch(obj)
+{
+	var _this=this;
+	this.obj=obj;
+	this.bTap=false;
+	this.start={x:0,y:0};
+	this.obj.addEventListener("touchstart",function(e){
+			_this.fnStart(e);
+	},false);
+	this.obj.addEventListener("touchmove",function(e){
+			_this.fnMove(e);
+	},false);
+	this.obj.addEventListener("touchend",function(e){
+			_this.fnEnd(e);
+	},false);
+}
+Touch.prototype=
+{
+	fnStart:function(e)
+	{
+		var oTouch=e.changedTouches[0];
+		this.bTap=true;
+		this.start={x:oTouch.pageX,y:oTouch.pageY};
+	},
+	fnMove:function(e)
+	{
+		var oTouch=e.changedTouches[0];
+		this.Move={x:oTouch.pageX,y:oTouch.pageY};
+		this.bTap=false;
+	},
+	fnEnd:function(e)
+	{
+		if(this.bTap&&this.fnTap)
+		{
+			this.fnTap.call(this.obj);
+		}
+		if(!this.Move)
+		{
+			return;
+		}
+		if(Math.abs(this.Move.x-this.start.x)>50)
+		{
+			
+			if(this.Move.x-this.start.x<0)
+			{
+				this.fnSwipeLeft&&this.fnSwipeLeft.call(this.obj);
+			}
+			else
+			{
+				this.fnSwipeRight&&this.fnSwipeRight.call(this.obj);
+			}
+		}
+		if(Math.abs(this.Move.y-this.start.y)>50)
+		{
+			if(this.Move.y-this.start.y<0)
+			{
+				this.fnSwipeUp&&this.fnSwipeUp.call(this.obj);
+			}
+			else
+			{
+				this.fnSwipeDown&&this.fnSwipeDown.call(this.obj);
+			}
+		}
+		this.Move={};
+	},
+	tap:function(fnTap)
+	{
+		this.fnTap=fnTap;
+	},
+	swipeLeft:function(fnSwipeLeft)
+	{
+		this.fnSwipeLeft=fnSwipeLeft;
+	},
+	swipeRight:function(fnSwipeRight)
+	{
+		this.fnSwipeRight=fnSwipeRight;
+	},
+	swipeUp:function(fnSwipeUp)
+	{
+		this.fnSwipeUp=fnSwipeUp;
+	},
+	swipeDown:function(fnSwipeDown)
+	{
+		this.fnSwipeDown=fnSwipeDown;
+	}  
+	
+}
+function cys(obj)
+{
+	return new Touch(obj);
+}

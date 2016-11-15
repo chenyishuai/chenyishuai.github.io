@@ -222,7 +222,10 @@ var swiperRander = (function () {
             var myScroll;
             myscroll=new IScroll("#wrapper1",{
                 scrollbars: true,
-                fadeScrollbars:true
+                fadeScrollbars:true,
+                momentum:false,
+                bounce:false,
+                momentum:false
             });
             // $("#wrapper1").one("touchstart",function(){
             //     myscroll.refresh();
@@ -237,18 +240,33 @@ var swiperRander = (function () {
                 $dialog = $page6.children('.dialog'),
                 $digImg = $dialog.children('img')
                 $clos = $dialog.children('.clos'),
-                $li = $('#page6 li');
-
-            $li.tap(function () {
-                $mask.css({
-                    'display':'block',
-                    'opacity':'0.7'
-                });
-                $dialog.css({
-                    'transform':'translateY(-40%)',
-                });
-                $digImg.attr('src','imgs/'+($(this).index()+1)+'.jpg')
-            });
+                $list = $('#list')[0];
+            var pli = $list.children;
+            // console.log(pli);
+            // 绑定自定义tap事件解决滑动误触问题
+            for(i=0;i<pli.length;i++){
+                cys(pli[i]).tap(function () {
+                    $mask.css({
+                        'display':'block',
+                        'opacity':'0.7'
+                    });
+                    $dialog.css({
+                        'transform':'translateY(-40%)',
+                    });
+                    $digImg.attr('src','imgs/'+($(this).index()+1)+'.jpg')
+                })
+            }
+            // $li.Tap(function () {
+            //     $mask.css({
+            //         'display':'block',
+            //         'opacity':'0.7'
+            //     });
+            //
+            //     $dialog.css({
+            //         'transform':'translateY(-40%)',
+            //     });
+            //     $digImg.attr('src','imgs/'+($(this).index()+1)+'.jpg')
+            // });
             $clos.singleTap(function () {
                 $page6.css('WebkitFilter','oPage.style.filter="blur(0)"');
                 $dialog.css({
