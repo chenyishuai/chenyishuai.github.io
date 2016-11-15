@@ -128,14 +128,17 @@ body,html{width: 100%;height: 100%;overflow: hidden;}
     color: white;
 }
 .cube .tip{
+    z-index: 100;
     position: absolute;
     width: 3.94rem;
     height: .44rem;
-    background:url("../imgs/zf_cubeTip.png")no-repeat ;
-    background-size: 100% 100%;
     bottom: .5rem;
     left: 50%;
     margin-left: -1.97rem;
+    font-size: .3rem;
+    text-align: center;
+    color: red;
+    line-height: .44rem;
 }
 .cube .cube-box{
     text-align: center;
@@ -260,7 +263,7 @@ body,html{width: 100%;height: 100%;overflow: hidden;}
     background:#ffffff ;
 }
 .page6{
-    background:deepskyblue ;
+    background:#fcfcfb;
 }
 .swiper-container h2{
     position: absolute;
