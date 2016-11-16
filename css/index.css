@@ -271,7 +271,7 @@ body,html{width: 100%;height: 100%;overflow: hidden;}
     height: .9rem;
     top: 7%;
     color: #665c50;
-    font-size: .6rem;
+    font-size: 25px;
 }
 .swiper .return{
     position: absolute;
@@ -285,7 +285,7 @@ body,html{width: 100%;height: 100%;overflow: hidden;}
 }
 .swiper .info{
     position: absolute;
-    top: 44%;
+    top: 45%;
     left: 50%;
     margin:-3rem 0 0 -40%;
     width: 80%;
