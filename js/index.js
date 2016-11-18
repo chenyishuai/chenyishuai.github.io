@@ -6,7 +6,7 @@
 // LOADING
 // 用自调用函数表达式做闭包,返回一个对象,实现方法私有化,代码模块化,防止变量污染
 var loadingRender = (function () {
-    var ary = [ 'hr.png', 'me.png']
+    var ary = [ 'me.png','zf_messageKeyboard.png']
     var $loading = $('#loading'),
         $progressEm = $loading.find('em');
     var step = 0,
