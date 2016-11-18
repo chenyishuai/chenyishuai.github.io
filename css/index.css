@@ -231,7 +231,7 @@ body,html{width: 100%;height: 100%;overflow: hidden;}
     height:.7rem;
     width: 5.4rem;
     box-sizing: border-box;
-    font-size: .35rem;
+    font-size: 17px;
 }
 .page1 #makisu dd:last-child{height: 1.4rem;}
 .page1 dl dd:first-child{border:none;}
